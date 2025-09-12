@@ -15,15 +15,11 @@ const Footer = () => {
   const footerLinks = [
     {
       title: 'Community',
-      links: ['Browse Builds', 'Upload Build', 'Competitions', 'Leaderboard']
+      links: ['Browse Builds', 'Upload Build']
     },
     {
       title: 'Resources',
       links: ['Building Guides', 'Texture Packs', 'Tutorials', 'Tips & Tricks']
-    },
-    {
-      title: 'Support',
-      links: ['Help Center', 'Contact Us', 'Bug Reports', 'Feature Requests']
     }
   ];
 
@@ -48,19 +44,7 @@ const Footer = () => {
               The ultimate platform for Minecraft builders to showcase their creations, 
               connect with the community, and find inspiration for their next build.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center text-white hover:bg-minecraft-gold hover:text-black transition-all duration-200"
-                  whileHover={{ y: -2 }}
-                  aria-label={social.label}
-                >
-                  <SafeIcon icon={social.icon} className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
+            
           </div>
 
           {/* Footer Links */}
@@ -98,13 +82,9 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <p className="text-white/60 text-sm mb-4 md:mb-0">
-            © 2024 CraftCommunity. All rights reserved.
+            © 2025 CraftCommunity. All rights reserved.
           </p>
-          <div className="flex items-center space-x-1 text-white/60 text-sm">
-            <span>Made with</span>
-            <SafeIcon icon={FiHeart} className="w-4 h-4 text-red-500" />
-            <span>for the Minecraft community</span>
-          </div>
+          
         </motion.div>
       </div>
     </footer>

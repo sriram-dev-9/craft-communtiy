@@ -7,10 +7,9 @@ const { FiUsers, FiTrendingUp, FiImage, FiAward } = FiIcons;
 
 const Community = () => {
   const stats = [
-    { icon: FiUsers, value: '50K+', label: 'Active Builders' },
-    { icon: FiImage, value: '200K+', label: 'Builds Shared' },
-    { icon: FiTrendingUp, value: '1M+', label: 'Views Monthly' },
-    { icon: FiAward, value: '500+', label: 'Competitions' }
+    { icon: FiUsers, value: '2+', label: 'Active Builders' },
+    { icon: FiImage, value: '5+', label: 'Builds Shared' },
+    { icon: FiTrendingUp, value: '10+', label: 'Views Monthly' }
   ];
 
   return (
@@ -26,12 +25,12 @@ const Community = () => {
             Join Our Community
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Be part of the largest Minecraft building community. Share your creations, 
+            Be part of our Minecraft building community. Share your creations, 
             get feedback, and inspire others with your builds.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
