@@ -62,8 +62,8 @@
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/your-username/craft-community.git
-cd craft-community/project-files
+git clone https://github.com/sriram-dev-9/craft-communtiy.git
+cd craft-communtiy/project-files
 npm install
 ```
 
@@ -195,9 +195,6 @@ VITE_SUPABASE_ANON_KEY=your_production_anon_key
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
