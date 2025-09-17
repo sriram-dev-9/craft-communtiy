@@ -11,7 +11,7 @@ const FeedPage = () => {
   const [loading, setLoading] = useState(true)
   const [uploadModalOpen, setUploadModalOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
-  const [sortBy, setSortBy] = useState('latest') 
+  const [sortBy, setSortBy] = useState('latest') // 'latest', 'most_liked'
   const [selectedTags, setSelectedTags] = useState([])
   const [availableTags, setAvailableTags] = useState([])
 
@@ -27,7 +27,7 @@ const FeedPage = () => {
             username,
             avatar_url
           ),
-          likes!inner (
+          likes (
             user_id
           )
         `)
@@ -97,7 +97,17 @@ const FeedPage = () => {
   }
 
   const handleSignOut = async () => {
-    await signOut()
+    try {
+      const { error } = await signOut()
+      if (error) {
+        console.error('Error signing out:', error)
+      } else {
+        // Sign out successful, user will be redirected by ProtectedRoute
+        window.location.href = '/'
+      }
+    } catch (err) {
+      console.error('Unexpected error during sign out:', err)
+    }
   }
 
   const toggleTag = (tag) => {
@@ -254,66 +264,3 @@ const FeedPage = () => {
 }
 
 export default FeedPage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

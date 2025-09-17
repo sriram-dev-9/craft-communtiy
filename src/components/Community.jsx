@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import AuthModal from './AuthModal';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
 
 const { FiUsers, FiTrendingUp, FiImage, FiAward } = FiIcons;
 
 const Community = () => {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
   const stats = [
     { icon: FiUsers, value: '2+', label: 'Active Builders' },
     { icon: FiImage, value: '5+', label: 'Builds Shared' },
     { icon: FiTrendingUp, value: '10+', label: 'Views Monthly' }
   ];
+
+  const handleSignUpClick = () => {
+    if (user) {
+      navigate('/app');
+    } else {
+      setAuthModalOpen(true);
+    }
+  };
 
   return (
     <section id="community" className="py-20 px-4 bg-black/20 backdrop-blur-sm">
@@ -68,16 +83,26 @@ const Community = () => {
               It's free and takes less than a minute to get started!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="minecraft-button minecraft-font text-white px-8 py-4 text-sm">
-                Sign Up Free
+              <button 
+                onClick={handleSignUpClick}
+                className="minecraft-button minecraft-font text-white px-8 py-4 text-sm"
+              >
+                {user ? 'Go to App' : 'Sign Up Free'}
               </button>
-              <button className="bg-transparent border-2 border-white text-white minecraft-font px-8 py-4 text-sm hover:bg-white hover:text-black transition-all duration-200">
+              {/* <button className="bg-transparent border-2 border-white text-white minecraft-font px-8 py-4 text-sm hover:bg-white hover:text-black transition-all duration-200">
                 Learn More
-              </button>
+              </button> */}
             </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
+        mode="signup"
+      />
     </section>
   );
 };

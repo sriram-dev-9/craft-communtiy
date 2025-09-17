@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
 
           {/* Footer Links */}
-          {footerLinks.map((section, index) => (
+          {/* {footerLinks.map((section, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const Footer = () => {
                 ))}
               </ul>
             </motion.div>
-          ))}
+          ))} */}
         </div>
 
         <motion.div 

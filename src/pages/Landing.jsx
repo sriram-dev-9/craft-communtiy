@@ -13,7 +13,7 @@ const Landing = () => {
       <Header />
       <Hero />
       <Features />
-      <Showcase />
+      {/* <Showcase /> */}
       <Community />
       <Footer />
     </div>

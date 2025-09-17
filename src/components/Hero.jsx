@@ -70,9 +70,9 @@ const Hero = () => {
                   <span>{user ? 'Go to App' : 'Start Building'}</span>
                 </button>
                 
-                <button className="bg-transparent border-4 border-white text-white minecraft-font px-8 py-4 text-sm hover:bg-white hover:text-black transition-all duration-200">
+                {/* <button className="bg-transparent border-4 border-white text-white minecraft-font px-8 py-4 text-sm hover:bg-white hover:text-black transition-all duration-200">
                   View Gallery
-                </button>
+                </button> */}
               </motion.div>
             </motion.div>
 

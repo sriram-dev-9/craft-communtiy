@@ -15,12 +15,12 @@ const Header = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  const navItems = [
-    { name: 'Home', icon: FiHome },
-    { name: 'Gallery', icon: FiImage },
-    { name: 'Community', icon: FiUsers },
-    { name: 'Guides', icon: FiBook }
-  ];
+  // const navItems = [
+  //   { name: 'Home', icon: FiHome },
+  //   { name: 'Gallery', icon: FiImage },
+  //   { name: 'Community', icon: FiUsers },
+  //   { name: 'Guides', icon: FiBook }
+  // ];
 
   const handleAuthClick = (mode) => {
     setAuthMode(mode);
@@ -52,7 +52,7 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
-              {navItems.map((item, index) => (
+              {/* {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={`#${item.name.toLowerCase()}`}
@@ -65,7 +65,7 @@ const Header = () => {
                   <SafeIcon icon={item.icon} className="w-4 h-4" />
                   <span className="minecraft-font text-sm">{item.name}</span>
                 </motion.a>
-              ))}
+              ))} */}
               
               {/* Auth Buttons */}
               {user ? (
@@ -117,7 +117,7 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
             >
-              {navItems.map((item, index) => (
+              {/* {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={`#${item.name.toLowerCase()}`}
@@ -130,7 +130,7 @@ const Header = () => {
                   <SafeIcon icon={item.icon} className="w-4 h-4" />
                   <span className="minecraft-font text-sm">{item.name}</span>
                 </motion.a>
-              ))}
+              ))} */}
               
               {/* Mobile Auth Buttons */}
               {user ? (
@@ -139,7 +139,7 @@ const Header = () => {
                   className="w-full text-left flex items-center space-x-3 text-minecraft-gold py-3 border-b border-white/20"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navItems.length * 0.1 }}
+                  transition={{ delay: 0.1 }}
                 >
                   <SafeIcon icon={FiHome} className="w-4 h-4" />
                   <span className="minecraft-font text-sm">Go to App</span>
@@ -151,7 +151,7 @@ const Header = () => {
                     className="w-full text-left flex items-center space-x-3 text-white py-3 border-b border-white/20"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: navItems.length * 0.1 }}
+                    transition={{ delay: 0.1 }}
                   >
                     <SafeIcon icon={FiLogIn} className="w-4 h-4" />
                     <span className="minecraft-font text-sm">Sign In</span>
@@ -161,7 +161,7 @@ const Header = () => {
                     className="w-full text-left flex items-center space-x-3 text-minecraft-gold py-3"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (navItems.length + 1) * 0.1 }}
+                    transition={{ delay: 0.2 }}
                   >
                     <SafeIcon icon={FiUsers} className="w-4 h-4" />
                     <span className="minecraft-font text-sm">Join Now</span>
