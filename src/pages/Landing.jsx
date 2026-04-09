@@ -6,10 +6,12 @@ import Features from '../components/Features';
 import Showcase from '../components/Showcase';
 import Community from '../components/Community';
 import Footer from '../components/Footer';
+import EventPopup from '../components/EventPopup';
 
 const Landing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-400 via-sky-300 to-green-400">
+      <EventPopup />
       <Header />
       <Hero />
       <Features />
